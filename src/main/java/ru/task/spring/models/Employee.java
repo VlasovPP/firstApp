@@ -9,7 +9,7 @@ import javax.validation.constraints.Size;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name = "organization_id", nullable = false)
     private Integer id;
 
     @NotEmpty(message = "surname should not be empty")

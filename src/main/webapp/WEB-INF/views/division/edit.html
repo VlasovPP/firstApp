@@ -19,8 +19,8 @@
     <input type="text" th:field="*{managerOfDivision}" id="managerOfDivision"/>
     <div style="color:red" th:if="${#fields.hasErrors('managerOfDivision')}" th:errors="*{managerOfDivision}">managerOfDivision Error</div>
     <br/>
-    <label for="organizationId">Enter organizationId: </label>
-    <input type="text" th:field="*{organizationId}" id="organizationId"/>
+    <label for="nameOfOrganization">Enter organizationId: </label>
+    <input type="text" th:field="*{nameOfOrganization}" id="nameOfOrganization"/>
 
     <br/>
     <input type="submit" value="Update!"/>

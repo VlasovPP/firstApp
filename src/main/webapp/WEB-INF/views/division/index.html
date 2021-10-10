@@ -8,13 +8,17 @@
 
 <div th:each="division : ${division}">
     <a th:href="@{/division/{id}(id=${division.getId()})}"
-       th:text="${division.getManagerOfDivision() + ', ' + division.getContactDetails() + ', ' + division.getDivisionName()}">user</a>
+       th:text="${division.getNameOfOrganization() + ', ' +division.getDivisionName() + ', ' +division.getManagerOfDivision() + ', ' + division.getContactDetails() }">user</a>
 </div>
 
 <br/>
 <hr/>
 
 <a href="/division/new">Create new division</a>
+<br/>
+<a href="/employee">To employees</a>
+<br/>
+<a href="/organization">Back to organizations</a>
 
 </body>
 </html>

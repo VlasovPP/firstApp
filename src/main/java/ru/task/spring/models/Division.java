@@ -27,29 +27,50 @@ public class Division {
     @Column(name = "manager_of_division")
     private String managerOfDivision;
 
+  //  @ManyToOne
+    //@JoinColumn(name = "name_of_organization")
+    @Column(name = "name_of_organization")
+    private String nameOfOrganization;
 
-    @Column(name = "organization_id")
-    private int organizationId;
+    public String getNameOfOrganization() {
+        return nameOfOrganization;
+    }
 
-    public Division(int id, String divisionName, String contactDetails, String managerOgDivision, int organizationId) {
+    public void setNameOfOrganization(String nameOfOrganization) {
+        this.nameOfOrganization = nameOfOrganization;
+    }
+
+
+
+//    @ManyToOne
+//    @JoinColumn(name = "organization_id")
+//    @Column(name = "organization_id")
+//    private int organizationId;
+
+//    @ManyToOne
+//    @JoinColumn(name = "organization_id")
+//    private Organization organizationId;
+
+    public Division(int id, String divisionName, String contactDetails, String managerOfDivision) {
         this.id = id;
         this.divisionName = divisionName;
         this.contactDetails = contactDetails;
-        this.managerOfDivision = managerOgDivision;
-        this.organizationId = organizationId;
+        this.managerOfDivision = managerOfDivision;
+
     }
+
 
     public Division() {
     }
 
 
-    public int getOrganizationId() {
-        return organizationId;
-    }
-
-    public void setOrganizationId(int organizationId) {
-        this.organizationId = organizationId;
-    }
+//    public int getOrganizationId() {
+//        return organizationId;
+//    }
+//
+//    public void setOrganizationId(int organizationId) {
+//        this.organizationId = organizationId;
+//    }
 
     public String getManagerOfDivision() {
         return managerOfDivision;
@@ -82,4 +103,12 @@ public class Division {
     public void setId(Integer id) {
         this.id = id;
     }
+
+//    public Organization getOrganization() {
+//        return organization;
+//    }
+//
+//    public void setOrganization(Organization organization) {
+//        this.organization = organization;
+//    }
 }

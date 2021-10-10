@@ -10,7 +10,7 @@ import javax.validation.constraints.Size;
 public class Organization {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "organization_id")
+    @Column(name = "id")
     private int organizationId;
 
     @NotEmpty(message = "name_of_organization should not be empty")
