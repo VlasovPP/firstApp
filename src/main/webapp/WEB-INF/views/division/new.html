@@ -29,12 +29,12 @@
 <!--            </option>-->
 <!--        </select>-->
 <!--    </label>-->
-    <label for="nameOfOrganization">Choose name of organization: </label>
-    <select class="form-control" th:field="*{nameOfOrganization}" id="nameOfOrganization">
+    <label for="organizationId">Choose name of organization: </label>
+    <select class="form-control" th:field="*{organizationId}" id="organizationId">
         <option value="0">ALL</option>
         <option th:each="organization : ${allOrganization}"
-                th:value="${organization.getNameOfOrganization()}"
-                th:selected="${organization.getNameOfOrganization()}"
+                th:value="${organization.getId()}"
+                th:selected="${organization.getId()}"
                 th:text="${organization.getNameOfOrganization()}">
         </option>
     </select>

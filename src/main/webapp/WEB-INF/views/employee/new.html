@@ -19,9 +19,29 @@
     <input type="text" th:field="*{middleName}" id="middleName"/>
     <div style="color:red" th:if="${#fields.hasErrors('middleName')}" th:errors="*{middleName}">middleName Error</div>
     <br/>
-    <label for="position">Enter email: </label>
+    <label for="position">Enter position: </label>
     <input type="text" th:field="*{position}" id="position"/>
     <div style="color:red" th:if="${#fields.hasErrors('position')}" th:errors="*{position}">position Error</div>
+    <br/>
+    <label for="divisionName">Choose name of organization: </label>
+    <select class="form-control" th:field="*{divisionName}" id="divisionName">
+        <option value="0">ALL</option>
+        <option th:each="division : ${allDivisions}"
+                th:value="${division.getDivisionName()}"
+                th:selected="${division.getDivisionName()}"
+                th:text="${division.getDivisionName() + division.nameFromId(division.getOrganizationId())}">
+        </option>
+    </select>
+    <br/>
+    <label for="organizationName">Choose name of organization: </label>
+    <select class="form-control" th:field="*{organizationName}" id="organizationName">
+        <option value="0">ALL</option>
+        <option th:each="organization : ${allOrganization}"
+                th:value="${organization.getNameOfOrganization()}"
+                th:selected="${organization.getNameOfOrganization()}"
+                th:text="${organization.getNameOfOrganization()}">
+        </option>
+    </select>
     <br/>
     <input type="submit" value="Create!"/>
 </form>

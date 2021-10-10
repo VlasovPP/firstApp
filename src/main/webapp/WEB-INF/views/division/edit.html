@@ -19,9 +19,15 @@
     <input type="text" th:field="*{managerOfDivision}" id="managerOfDivision"/>
     <div style="color:red" th:if="${#fields.hasErrors('managerOfDivision')}" th:errors="*{managerOfDivision}">managerOfDivision Error</div>
     <br/>
-    <label for="nameOfOrganization">Enter organizationId: </label>
-    <input type="text" th:field="*{nameOfOrganization}" id="nameOfOrganization"/>
-
+    <label for="organizationId">Choose name of organization: </label>
+    <select class="form-control" th:field="*{organizationId}" id="organizationId">
+        <option value="0">ALL</option>
+        <option th:each="organization : ${allOrganization}"
+                th:value="${organization.getId()}"
+                th:selected="${organization.getId()}"
+                th:text="${organization.getNameOfOrganization()}">
+        </option>
+    </select>
     <br/>
     <input type="submit" value="Update!"/>
 </form>

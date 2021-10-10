@@ -47,7 +47,6 @@ public class DivisionDAO {
         divisionToBeUpdated.setDivisionName(updatedDivision.getDivisionName());
         divisionToBeUpdated.setContactDetails(updatedDivision.getContactDetails());
         divisionToBeUpdated.setManagerOfDivision(updatedDivision.getManagerOfDivision());
-        //divisionToBeUpdated.setNameOfOrganization(updatedDivision.getNameOfOrganization());
     }
 
     @Transactional

@@ -6,9 +6,15 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ru.task.spring.dao.EmployeeDAO;
+import ru.task.spring.models.Division;
 import ru.task.spring.models.Employee;
+import ru.task.spring.models.Organization;
 
 import javax.validation.Valid;
+import java.util.List;
+
+import static ru.task.spring.controllers.DivisionController.allDivisions;
+import static ru.task.spring.controllers.OrganizationController.allOrganization;
 
 @Controller
 @RequestMapping("/employee")
@@ -69,4 +75,15 @@ public class EmployeeController {
         employeeDAO.delete(id);
         return "redirect:/employee";
     }
+
+    @ModelAttribute("allDivisions")
+    public List<Division> allDivisions1() {
+        return allDivisions();
+    }
+
+    @ModelAttribute("allOrganization")
+    public List<Organization> allOrganization1() {
+        return allOrganization();
+    }
+
 }

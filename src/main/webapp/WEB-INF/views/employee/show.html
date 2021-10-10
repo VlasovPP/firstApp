@@ -5,7 +5,7 @@
     <title>employee</title>
 </head>
 <body>
-<p th:text="${employee.getSurname() + ', ' + employee.getName() + ', ' + employee.getMiddleName()}">VALUE</p>
+<p th:text="${employee.getOrganizationName() + ', ' + employee.getDivisionName() + ', ' + employee.getSurname() + ', ' + employee.getName() + ', ' + employee.getMiddleName()}">VALUE</p>
 <p th:text="${'Position:' + ', ' + employee.getPosition()}">VALUE</p>
 <p th:text="${employee.getId()}">VALUE</p>
 

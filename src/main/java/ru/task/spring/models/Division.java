@@ -1,15 +1,21 @@
 package ru.task.spring.models;
 
+import ru.task.spring.controllers.DivisionController;
+import ru.task.spring.controllers.OrganizationController;
+import ru.task.spring.dao.DivisionDAO;
+import ru.task.spring.dao.OrganizationDAO;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Table(name = "division")
 @Entity
 public class Division {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "division_id", nullable = false)
+    @Column(name = "id", nullable = false)
     private int id;
 
     @NotEmpty(message = "division_name should not be empty")
@@ -27,29 +33,10 @@ public class Division {
     @Column(name = "manager_of_division")
     private String managerOfDivision;
 
-  //  @ManyToOne
-    //@JoinColumn(name = "name_of_organization")
-    @Column(name = "name_of_organization")
-    private String nameOfOrganization;
-
-    public String getNameOfOrganization() {
-        return nameOfOrganization;
-    }
-
-    public void setNameOfOrganization(String nameOfOrganization) {
-        this.nameOfOrganization = nameOfOrganization;
-    }
+    @Column(name = "organization_id")
+    private int organizationId;
 
 
-
-//    @ManyToOne
-//    @JoinColumn(name = "organization_id")
-//    @Column(name = "organization_id")
-//    private int organizationId;
-
-//    @ManyToOne
-//    @JoinColumn(name = "organization_id")
-//    private Organization organizationId;
 
     public Division(int id, String divisionName, String contactDetails, String managerOfDivision) {
         this.id = id;
@@ -59,18 +46,9 @@ public class Division {
 
     }
 
-
     public Division() {
     }
 
-
-//    public int getOrganizationId() {
-//        return organizationId;
-//    }
-//
-//    public void setOrganizationId(int organizationId) {
-//        this.organizationId = organizationId;
-//    }
 
     public String getManagerOfDivision() {
         return managerOfDivision;
@@ -100,15 +78,26 @@ public class Division {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-//    public Organization getOrganization() {
-//        return organization;
-//    }
-//
-//    public void setOrganization(Organization organization) {
-//        this.organization = organization;
-//    }
+    public int getOrganizationId() {
+        return organizationId;
+    }
+
+    public void setOrganizationId(int organizationId) {
+        this.organizationId = organizationId;
+    }
+
+    public String nameFromId(int myid){
+     List<Organization> organizationList = OrganizationController.allOrganization();
+        for (Organization organization:organizationList) {
+            if(organization.getId()==myid){
+              return organization.getNameOfOrganization();
+            }
+        } return null;
+
+    }
+
 }

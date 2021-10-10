@@ -20,7 +20,7 @@ import static ru.task.spring.controllers.OrganizationController.allOrganization;
 @RequestMapping("/division")
 public class DivisionController {
 
-    private final DivisionDAO divisionDAO;
+    private static DivisionDAO divisionDAO;
 
     @Autowired
     public DivisionController(DivisionDAO divisionDAO) {
@@ -76,19 +76,14 @@ public class DivisionController {
         return "redirect:/division";
     }
 
-//    @ModelAttribute("allOrganization")
-//    public static List<Organization> allOrganization() {
-//        List<Organization> organizations = new ArrayList<>();
-//
-//        organizations.add(new Organization(1,"asdfsa","sadfsadf",
-//                "sadfsadf", "asdf"));
-//        organizations.add(new Organization(2,"asgnhhy","sg",
-//                "sadfsadf", "asdf"));
-//        return organizations;
-//    }
 
     @ModelAttribute("allOrganization")
-    public List<Organization> allOrganization1() {
+    public static List<Organization> allOrganization1() {
         return allOrganization();
+    }
+
+    @ModelAttribute("allDivisions")
+    public static List<Division> allDivisions() {
+        return divisionDAO.index();
     }
 }
