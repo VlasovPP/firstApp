@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>division</title>
+</head>
+<body>
+<p th:text="${division.getDivisionName() + ', ' + division.getContactDetails()}">VALUE</p>
+<p th:text="${'Manager:' + ', ' + division.getManagerOfDivision()}">VALUE</p>
+<p th:text="${division.getId()}">VALUE</p>
+
+<a th:href="@{/division/{id}/edit(id=${division.getId()})}">Edit</a>
+
+<form th:method="DELETE" th:action="@{/division/{id}(id=${division.getId()})}">
+    <input type="submit" value="DELETE"/>
+</form>
+</body>
+</html>

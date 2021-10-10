@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update division</title>
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/division/{id}(id=${division.getId()})}" th:object="${division}">
+    <label for="divisionName">Enter divisionName: </label>
+    <input type="text" th:field="*{divisionName}" id="divisionName"/>
+    <div style="color:red" th:if="${#fields.hasErrors('divisionName')}" th:errors="*{divisionName}">divisionName Error</div>
+    <br/>
+    <label for="contactDetails">Enter contactDetails: </label>
+    <input type="text" th:field="*{contactDetails}" id="contactDetails"/>
+    <div style="color:red" th:if="${#fields.hasErrors('contactDetails')}" th:errors="*{contactDetails}">contactDetails Error</div>
+    <br/>
+    <label for="managerOfDivision">Enter managerOfDivision: </label>
+    <input type="text" th:field="*{managerOfDivision}" id="managerOfDivision"/>
+    <div style="color:red" th:if="${#fields.hasErrors('managerOfDivision')}" th:errors="*{managerOfDivision}">managerOfDivision Error</div>
+    <br/>
+    <label for="organizationId">Enter organizationId: </label>
+    <input type="text" th:field="*{organizationId}" id="organizationId"/>
+
+    <br/>
+    <input type="submit" value="Update!"/>
+</form>
+
+</body>
+</html>

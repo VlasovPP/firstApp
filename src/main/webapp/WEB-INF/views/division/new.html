@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New division</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/division}" th:object="${division}">
+    <label for="divisionName">Enter divisionName: </label>
+    <input type="text" th:field="*{divisionName}" id="divisionName"/>
+    <div style="color:red" th:if="${#fields.hasErrors('divisionName')}" th:errors="*{divisionName}">divisionName Error</div>
+    <br/>
+    <label for="contactDetails">Enter contactDetails: </label>
+    <input type="text" th:field="*{contactDetails}" id="contactDetails"/>
+    <div style="color:red" th:if="${#fields.hasErrors('contactDetails')}" th:errors="*{contactDetails}">contactDetails Error</div>
+    <br/>
+    <label for="managerOfDivision">Enter managerOfDivision: </label>
+    <input type="text" th:field="*{managerOfDivision}" id="managerOfDivision"/>
+    <div style="color:red" th:if="${#fields.hasErrors('managerOfDivision')}" th:errors="*{managerOfDivision}">managerOfDivision Error</div>
+    <br/>
+<!--    <label for="organizationId">Enter organizationId: </label>-->
+<!--    <input type="text" th:field="*{organizationId}" id="organizationId"/>-->
+<!--    <br/>-->
+<!--    <label for="divisionName"></label>-->
+<!--    <label>-->
+<!--        <select th:field="*{divisionName}">-->
+<!--            <option th:each="i : ${#numbers.sequence(0, 100)}" th:value="${i}" th:text="${i}">id_organization</option>-->
+<!--            </option>-->
+<!--        </select>-->
+<!--    </label>-->
+    <label for="organizationId">Choose name of organization: </label>
+    <select class="form-control" th:field="*{organizationId}" id="organizationId">
+        <option value="0">ALL</option>
+        <option th:each="organization : ${allOrganization}"
+                th:value="${organization.getId()}"
+                th:selected="${organization.getId()}"
+                th:text="${organization.getNameOfOrganization()}">
+        </option>
+    </select>
+    <br/>
+    <input type="submit" value="Create!"/>
+</form>
+
+</body>
+</html>

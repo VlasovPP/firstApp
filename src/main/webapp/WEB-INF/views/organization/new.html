@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New organization</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/organization}" th:object="${organization}">
+    <label for="nameOfOrganization">Enter name_of_organization: </label>
+    <input type="text" th:field="*{nameOfOrganization}" id="nameOfOrganization"/>
+    <div style="color:red" th:if="${#fields.hasErrors('nameOfOrganization')}" th:errors="*{nameOfOrganization}">Name Error</div>
+    <br/>
+    <label for="physicalAddress">Enter physical_address: </label>
+    <input type="text" th:field="*{physicalAddress}" id="physicalAddress"/>
+    <div style="color:red" th:if="${#fields.hasErrors('physicalAddress')}" th:errors="*{physicalAddress}">Age Error</div>
+    <br/>
+    <label for="legalAddress">Enter legal_address: </label>
+    <input type="text" th:field="*{legalAddress}" id="legalAddress"/>
+    <div style="color:red" th:if="${#fields.hasErrors('legalAddress')}" th:errors="*{legalAddress}">Email Error</div>
+    <br/>
+    <label for="nameOfDirector">Enter name_of_director: </label>
+    <input type="text" th:field="*{nameOfDirector}" id="nameOfDirector"/>
+    <div style="color:red" th:if="${#fields.hasErrors('nameOfDirector')}" th:errors="*{nameOfDirector}">Email Error</div>
+    <br/>
+
+    <input type="submit" value="Create!"/>
+</form>
+
+</body>
+</html>

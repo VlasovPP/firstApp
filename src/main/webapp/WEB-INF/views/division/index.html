@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All employee</title>
+</head>
+<body>
+
+<div th:each="division : ${division}">
+    <a th:href="@{/division/{id}(id=${division.getId()})}"
+       th:text="${division.getManagerOfDivision() + ', ' + division.getContactDetails() + ', ' + division.getDivisionName()}">user</a>
+</div>
+
+<br/>
+<hr/>
+
+<a href="/division/new">Create new division</a>
+
+</body>
+</html>
