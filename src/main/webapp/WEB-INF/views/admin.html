@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div th:if="${#httpServletRequest.remoteUser != null}">
+  <p>Вы вошли как:</p>
+  <p th:text="${#httpServletRequest.remoteUser}">sample_user</p>
+  <br/>
+  <form th:action="@{/logout}" method="post">
+    <input type="submit" value="Log out" />
+  </form>
+</div>
+<br/>
+<hr/>
+<a href="/organization">To organizations</a>
+<br/>
+<a href="/division">To divisions</a>
+
+</body>
+</html>
