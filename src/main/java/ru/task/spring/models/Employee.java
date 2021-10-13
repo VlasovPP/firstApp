@@ -33,39 +33,21 @@ public class Employee {
     private String position;
 
     @Column(name = "division_id")
-    private String divisionName;
+    private int divisionId;
 
     @Column(name = "organization_id")
-    private String organizationName;
-
-    public String getOrganizationName() {
-        return organizationName;
-    }
-
-    public void setOrganizationName(String organizationName) {
-        this.organizationName = organizationName;
-    }
+    private int organizationId;
 
     public Employee() {
 
     }
 
-    public Employee(Integer id, String surname, String name, String middleName, String position) {
-        this.id = id;
-        this.surname = surname;
-        this.name = name;
-        this.middleName = middleName;
-        this.position = position;
-
+    public int getDivisionId() {
+        return divisionId;
     }
 
-
-    public String getDivisionName() {
-        return divisionName;
-    }
-
-    public void setDivisionName(String divisionName) {
-        this.divisionName = divisionName;
+    public void setDivisionId(int divisionName) {
+        this.divisionId = divisionName;
     }
 
     public String getPosition() {
@@ -106,5 +88,13 @@ public class Employee {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public int getOrganizationId() {
+        return organizationId;
+    }
+
+    public void setOrganizationId(int organizationName) {
+        this.organizationId = organizationName;
     }
 }

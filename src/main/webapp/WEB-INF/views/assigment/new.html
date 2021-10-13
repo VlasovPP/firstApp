@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New assigment</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/assigment}" th:object="${assigment}">
+    <label for="subjectOfAssigment">Enter subjectOfAssigment: </label>
+    <input type="text" th:field="*{subjectOfAssigment}" id="subjectOfAssigment"/>
+
+    <br/>
+    <label for="organizationId">Choose name of organization: </label>
+    <select class="form-control" th:field="*{executorsOfAssigment}" id="organizationId">
+        <option value="0">ALL</option>
+        <option th:each="employee : ${allEmployee}"
+                th:value="${employee.getId}"
+                th:selected="${employee.getId}"
+                th:text="${employee.getSurname()+' '+employee.getName()+' '+ employee.getMiddleName()}">
+        </option>
+    </select>
+    <br/>
+    <label for="dateOfExecution">Enter dateOfExecution: </label>
+    <input type="text" th:field="*{dateOfExecution}" id="dateOfExecution"/>
+
+    <br/>
+    <label for="singOfControl">Choose singOfControl: </label>
+    <select class="form-control" th:field="*{singOfControl}" id="singOfControl">
+        <option value="0">ALL</option>
+        <option th:each="assigment : ${singOfControl}"
+                th:value="${assigment}"
+                th:selected="${assigment}"
+                th:text="${assigment}">
+        </option>
+    </select>
+    <br/>
+    <label for="singOfExecution">Choose name of organization: </label>
+    <select class="form-control" th:field="*{singOfExecution}" id="singOfExecution">
+        <option value="0">ALL</option>
+        <option th:each="assigment : ${singOfExecution}"
+                th:value="${assigment}"
+                th:selected="${assigment}"
+                th:text="${assigment}">
+        </option>
+    </select>
+    <br/>
+    <label for="textOfAssigment">Enter subjectOfAssigment: </label>
+    <input type="text" th:field="*{textOfAssigment}" id="textOfAssigment"/>
+    <div style="color:red" th:if="${#fields.hasErrors('textOfAssigment')}" th:errors="*{textOfAssigment}">textOfAssigment Error</div>
+    <br/>
+    <input type="submit" value="Create!"/>
+</form>
+
+</body>
+</html>

@@ -23,23 +23,23 @@
     <input type="text" th:field="*{position}" id="position"/>
     <div style="color:red" th:if="${#fields.hasErrors('position')}" th:errors="*{position}">position Error</div>
     <br/>
-    <label for="divisionName">Choose name of organization: </label>
-    <select class="form-control" th:field="*{divisionName}" id="divisionName">
+    <label for="organizationId">Choose name of organization: </label>
+    <select class="form-control" th:field="*{organizationId}" id="organizationId">
         <option value="0">ALL</option>
-        <option th:each="division : ${allDivisions}"
-                th:value="${division.getDivisionName()}"
-                th:selected="${division.getDivisionName()}"
-                th:text="${division.getDivisionName() + division.nameFromId(division.getOrganizationId())}">
+        <option th:each="organization : ${allOrganization}"
+                th:value="${organization.getId()}"
+                th:selected="${organization.getId()}"
+                th:text="${organization.getNameOfOrganization()}">
         </option>
     </select>
     <br/>
-    <label for="organizationName">Choose name of organization: </label>
-    <select class="form-control" th:field="*{organizationName}" id="organizationName">
+    <label for="divisionId">Choose name of division: </label>
+    <select class="form-control" th:field="*{divisionId}" id="divisionId">
         <option value="0">ALL</option>
-        <option th:each="organization : ${allOrganization}"
-                th:value="${organization.getNameOfOrganization()}"
-                th:selected="${organization.getNameOfOrganization()}"
-                th:text="${organization.getNameOfOrganization()}">
+        <option th:each="division : ${allDivisions}"
+                th:value="${division.getId()}"
+                th:selected="${division.getId()}"
+                th:text="${division.getDivisionName() + division.nameFromId(division.getOrganizationId())}">
         </option>
     </select>
     <br/>

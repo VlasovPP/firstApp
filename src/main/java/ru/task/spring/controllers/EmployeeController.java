@@ -20,7 +20,7 @@ import static ru.task.spring.controllers.OrganizationController.allOrganization;
 @RequestMapping("/employee")
 public class EmployeeController {
 
-    private final EmployeeDAO employeeDAO;
+    private static EmployeeDAO employeeDAO;
 
     @Autowired
     public EmployeeController(EmployeeDAO employeeDAO) {
@@ -84,6 +84,11 @@ public class EmployeeController {
     @ModelAttribute("allOrganization")
     public List<Organization> allOrganization1() {
         return allOrganization();
+    }
+
+    @ModelAttribute("allEmployee")
+    public static List<Employee> allEmployee() {
+        return employeeDAO.index();
     }
 
 }

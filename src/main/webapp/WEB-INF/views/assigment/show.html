@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>assigment</title>
+</head>
+<body>
+<p th:text="${assigment.getSubjectOfAssigment()}">VALUE</p>
+<p th:text="${'DateOfExecution:' + ', ' + assigment.getDateOfExecution()}">VALUE</p>
+<p th:text="${assigment.getSingOfExecution() + ', ' + assigment.getSingOfControl()}">VALUE</p>
+<p th:text="${assigment.getId()}">VALUE</p>
+<p th:text="${assigment.getTextOfAssigment()}">VALUE</p>
+
+
+<a th:href="@{/assigment/{id}/edit(id=${assigment.getId()})}">Edit</a>
+
+<form th:method="DELETE" th:action="@{/assigment/{id}(id=${assigment.getId()})}">
+    <input type="submit" value="DELETE"/>
+</form>
+</body>
+</html>
