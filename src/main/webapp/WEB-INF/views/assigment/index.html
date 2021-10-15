@@ -1,16 +1,44 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>All assigment</title>
-</head>
+  </head>
 <body>
 
-<div th:each="assigment : ${assigment}">
-    <a th:href="@{/assigment/{id}(id=${assigment.getId()})}"
-       th:text="${assigment.getSubjectOfAssigment() + ', ' +assigment.getDateOfExecution() + ', ' + assigment.getSingOfControl() + ', ' + assigment.getSingOfExecution().toString() + ', ' + assigment.getTextOfAssigment() }">user</a>
-</div>
+<h1> Список поручений</h1>
 
+<table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+    <tr>
+        <th>subject of assigment</th>
+        <th>executor of assigment</th>
+        <th>date of execution</th>
+        <th>sing of control</th>
+        <th>sing of execution</th>
+        <th>text of assigment</th>
+        <th>action</th>
+        <th>action</th>
+
+    </tr>
+    </thead>
+
+    <tr th:each="assigment : ${assigment}">
+        <td th:text="${assigment.getSubjectOfAssigment()}">th</td>
+        <td th:text="${assigment.getExecutorsOfAssigment()}">1234</td>
+        <td th:text="${assigment.getDateOfExecution()}">1234</td>
+        <td th:text="${assigment.getSingOfControl()}">1234</td>
+        <td th:text="${assigment.getSingOfExecution().toString()}">1234</td>
+        <td th:text="${assigment.getTextOfAssigment()}">1234</td>
+        <td> <a th:href="@{/assigment/{id}/edit(id=${assigment.getId()})}"</a>edit</td>
+        <td> <form th:method="DELETE" th:action="@{/assigment/{id}(id=${assigment.getId()})}">
+            <input type="submit" value="DELETE"/></td>
+        </td>
+    </tr>
+</table>
+<br/>
+<a href="/assigment/new">Create new assigment</a>
 <br/>
 <hr/>
 
@@ -19,22 +47,6 @@
 <a href="/employee">To employees</a>
 <br/>
 <a href="/organization">Back to organizations</a>
-
-</body>
-
-<body>
-<p th:text="${assigment.getSubjectOfAssigment()}">VALUE</p>
-<p th:text="${'DateOfExecution:' + ', ' + assigment.getDateOfExecution()}">VALUE</p>
-<p th:text="${assigment.getSingOfExecution() + ', ' + assigment.getSingOfControl()}">VALUE</p>
-<p th:text="${assigment.getId()}">VALUE</p>
-<p th:text="${assigment.getTextOfAssigment()}">VALUE</p>
-
-
-<a th:href="@{/assigment/{id}/edit(id=${assigment.getId()})}">Edit</a>
-
-<form th:method="DELETE" th:action="@{/assigment/{id}(id=${assigment.getId()})}">
-    <input type="submit" value="DELETE"/>
-</form>
 </body>
 
 </html>

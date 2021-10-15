@@ -6,6 +6,8 @@
 </head>
 <body>
 
+
+
 <div th:each="division : ${division}">
     <a th:href="@{/division/{id}(id=${division.getId()})}"
        th:text="${division.nameFromId(division.getOrganizationId()) + ', ' +division.getDivisionName() + ', ' +division.getManagerOfDivision() + ', ' + division.getContactDetails() }">user</a>
