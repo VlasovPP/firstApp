@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Update assigment</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
 </head>
 <body>
 
-<form th:method="PATCH" th:action="@{/assigment/{id}(id=${assigment.getId()})}" th:object="${assigment}">
+<form th:method="PATCH" th:action="@{/assigment/{id}(id=${assigment.getId()})}" th:object="${assigment}"
+      style="margin-left:30px">
     <label for="subjectOfAssigment">Enter subjectOfAssigment: </label>
-    <input type="text" th:field="*{subjectOfAssigment}" id="subjectOfAssigment"/>
-
+    <br/>
+    <input type="text" th:field="*{subjectOfAssigment}" id="subjectOfAssigment" style="width: 300px"/>
+    <div style="color:red" th:if="${#fields.hasErrors('subjectOfAssigment')}" th:errors="*{subjectOfAssigment}">subjectOfAssigment Error</div>
     <br/>
     <label for="organizationId">Choose name of organization: </label>
-    <select class="form-control" th:field="*{executorsOfAssigment}" id="organizationId">
+    <select class="form-control" th:field="*{executorsOfAssigment}" id="organizationId" style="width: 300px">
         <option value="0">ALL</option>
         <option th:each="employee : ${allEmployee}"
                 th:value="${employee.getId}"
@@ -22,11 +27,12 @@
     </select>
     <br/>
     <label for="dateOfExecution">Enter dateOfExecution: </label>
-    <input type="text" th:field="*{dateOfExecution}" id="dateOfExecution"/>
-
+    <br/>
+    <input type="text" th:field="*{dateOfExecution}" id="dateOfExecution" style="width: 300px"/>
+    <div style="color:red" th:if="${#fields.hasErrors('dateOfExecution')}" th:errors="*{dateOfExecution}">dateOfExecution Error</div>
     <br/>
     <label for="singOfControl">Choose singOfControl: </label>
-    <select class="form-control" th:field="*{singOfControl}" id="singOfControl">
+    <select class="form-control" th:field="*{singOfControl}" id="singOfControl" style="width: 300px">
         <option value="0">ALL</option>
         <option th:each="assigment : ${singOfControl}"
                 th:value="${assigment}"
@@ -36,7 +42,7 @@
     </select>
     <br/>
     <label for="singOfExecution">Choose name of organization: </label>
-    <select class="form-control" th:field="*{singOfExecution}" id="singOfExecution">
+    <select class="form-control" th:field="*{singOfExecution}" id="singOfExecution" style="width: 300px">
         <option value="0">ALL</option>
         <option th:each="assigment : ${singOfExecution}"
                 th:value="${assigment}"
@@ -46,10 +52,13 @@
     </select>
     <br/>
     <label for="textOfAssigment">Enter subjectOfAssigment: </label>
-    <input type="text" th:field="*{textOfAssigment}" id="textOfAssigment"/>
-    <div style="color:red" th:if="${#fields.hasErrors('textOfAssigment')}" th:errors="*{textOfAssigment}">textOfAssigment Error</div>
     <br/>
-    <input type="submit" value="Update!"/>
+    <input type="text" th:field="*{textOfAssigment}" id="textOfAssigment" style="height: 200px; width: 600px;"/>
+    <div style="color:red" th:if="${#fields.hasErrors('textOfAssigment')}" th:errors="*{textOfAssigment}">
+        textOfAssigment Error
+    </div>
+    <br/>
+    <input type="submit" class="btn btn-primary" value="Update!"/>
 </form>
 
 </body>

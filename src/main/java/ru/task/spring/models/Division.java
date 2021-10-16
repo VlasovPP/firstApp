@@ -1,14 +1,12 @@
 package ru.task.spring.models;
 
-import ru.task.spring.controllers.DivisionController;
 import ru.task.spring.controllers.OrganizationController;
-import ru.task.spring.dao.DivisionDAO;
-import ru.task.spring.dao.OrganizationDAO;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.util.List;
+import java.util.Objects;
 
 @Table(name = "division")
 @Entity
@@ -35,7 +33,6 @@ public class Division {
 
     @Column(name = "organization_id")
     private int organizationId;
-
 
 
     public Division(int id, String divisionName, String contactDetails, String managerOfDivision) {
@@ -90,14 +87,10 @@ public class Division {
         this.organizationId = organizationId;
     }
 
-    public String nameFromId(int myid){
-     List<Organization> organizationList = OrganizationController.allOrganization();
-        for (Organization organization:organizationList) {
-            if(organization.getId()==myid){
-              return organization.getNameOfOrganization();
-            }
-        } return null;
-
+    public String nameFromId(int myid) {
+        return Objects.requireNonNull(OrganizationController.allOrganization().stream().filter(organization -> organization.getId() == (myid))
+                .findFirst()
+                .orElse(null)).getNameOfOrganization();
     }
 
 }

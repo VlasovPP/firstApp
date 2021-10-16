@@ -1,8 +1,12 @@
 package ru.task.spring.models;
 
+import ru.task.spring.controllers.DivisionController;
+import ru.task.spring.controllers.OrganizationController;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.util.Objects;
 
 @Table(name = "employee")
 @Entity
@@ -96,5 +100,17 @@ public class Employee {
 
     public void setOrganizationId(int organizationName) {
         this.organizationId = organizationName;
+    }
+
+    public String nameOrgFromId(int myid) {
+        return Objects.requireNonNull(OrganizationController.allOrganization().stream().filter(organization -> organization.getId() == (myid))
+                .findFirst()
+                .orElse(null)).getNameOfOrganization();
+    }
+
+    public String nameDivFromId(int myid) {
+        return Objects.requireNonNull(DivisionController.allDivisions().stream().filter(organization -> organization.getId() == (myid))
+                .findFirst()
+                .orElse(null)).getDivisionName();
     }
 }

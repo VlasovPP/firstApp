@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>employee</title>
-</head>
-<body>
-<p th:text="${employee.getOrganizationId() + ', ' + employee.getDivisionId() + ', ' + employee.getSurname() + ', ' + employee.getName() + ', ' + employee.getMiddleName()}">VALUE</p>
-<p th:text="${'Position:' + ', ' + employee.getPosition()}">VALUE</p>
-<p th:text="${employee.getId()}">VALUE</p>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>employee</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<p th:text="${employee.getOrganizationId() + ', ' + employee.getDivisionId() + ', ' + employee.getSurname() + ', ' + employee.getName() + ', ' + employee.getMiddleName()}">VALUE</p>-->
+<!--<p th:text="${'Position:' + ', ' + employee.getPosition()}">VALUE</p>-->
+<!--<p th:text="${employee.getId()}">VALUE</p>-->
 
-<a th:href="@{/employee/{id}/edit(id=${employee.getId()})}">Edit</a>
+<!--<a th:href="@{/employee/{id}/edit(id=${employee.getId()})}">Edit</a>-->
 
-<form th:method="DELETE" th:action="@{/employee/{id}(id=${employee.getId()})}">
-    <input type="submit" value="DELETE"/>
-</form>
-</body>
-</html>
+<!--<form th:method="DELETE" th:action="@{/employee/{id}(id=${employee.getId()})}">-->
+<!--    <input type="submit" value="DELETE"/>-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->

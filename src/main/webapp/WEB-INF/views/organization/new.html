@@ -3,30 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>New organization</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
 </head>
 <body>
 
-<form th:method="POST" th:action="@{/organization}" th:object="${organization}">
-    <label for="nameOfOrganization">Enter name_of_organization: </label>
-    <input type="text" th:field="*{nameOfOrganization}" id="nameOfOrganization"/>
-    <div style="color:red" th:if="${#fields.hasErrors('nameOfOrganization')}" th:errors="*{nameOfOrganization}">Name Error</div>
+<h3 style="margin-left:30px">Create new organization</h3>
+
+<form th:method="POST" th:action="@{/organization}" th:object="${organization}" style="margin-left:30px">
+    <label for="nameOfOrganization">Enter name of organization: </label>
     <br/>
-    <label for="physicalAddress">Enter physical_address: </label>
-    <input type="text" th:field="*{physicalAddress}" id="physicalAddress"/>
-    <div style="color:red" th:if="${#fields.hasErrors('physicalAddress')}" th:errors="*{physicalAddress}">Age Error</div>
+    <input type="text" th:field="*{nameOfOrganization}" id="nameOfOrganization" style="width: 300px"/>
+    <div style="color:red" th:if="${#fields.hasErrors('nameOfOrganization')}" th:errors="*{nameOfOrganization}">Name
+        Error
+    </div>
     <br/>
-    <label for="legalAddress">Enter legal_address: </label>
-    <input type="text" th:field="*{legalAddress}" id="legalAddress"/>
+    <label for="physicalAddress">Enter physical address: </label>
+    <br/>
+    <input type="text" th:field="*{physicalAddress}" id="physicalAddress" style="width: 300px"/>
+    <div style="color:red" th:if="${#fields.hasErrors('physicalAddress')}" th:errors="*{physicalAddress}">Age Error
+    </div>
+    <br/>
+    <label for="legalAddress">Enter legal address: </label>
+    <br/>
+    <input type="text" th:field="*{legalAddress}" id="legalAddress" style="width: 300px"/>
     <div style="color:red" th:if="${#fields.hasErrors('legalAddress')}" th:errors="*{legalAddress}">Email Error</div>
     <br/>
-    <label for="nameOfDirector">Enter name_of_director: </label>
-    <input type="text" th:field="*{nameOfDirector}" id="nameOfDirector"/>
-    <div style="color:red" th:if="${#fields.hasErrors('nameOfDirector')}" th:errors="*{nameOfDirector}">Email Error</div>
+    <label for="nameOfDirector">Enter name of director: </label>
+    <br/>
+    <input type="text" th:field="*{nameOfDirector}" id="nameOfDirector" style="width: 300px"/>
+    <div style="color:red" th:if="${#fields.hasErrors('nameOfDirector')}" th:errors="*{nameOfDirector}">Email Error
+    </div>
     <br/>
 
-    <input type="submit" value="Create!"/>
+    <input type="submit" class="btn btn-primary" value="Create!"/>
 </form>
 
 </body>

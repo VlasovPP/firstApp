@@ -49,7 +49,7 @@ public class OrganizationController {
 
         organizationDAO.save(organization);
         return "redirect:/organization";
-}
+    }
 
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id) {

@@ -1,41 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Привет мир!!!</title>
+    <meta charset="UTF-8">
+    <title>Организатор поручений</title>
 
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
+    <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+    <!--  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>-->
+    <!--  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>-->
 </head>
-<script type="text/javascript">
-  $(document).ready(function (){
-      $.get('/organization', function (data){
-          console.log(data)
-      })
-  });
-</script>
-<body>
 
-Приветствую в приложении
+<body>
+<h1 style="text-align: center">Приветстую в организаторе поручений</h1>
 <br>
-Войти как:
+<h1 style="text-align: center">Войти как:</h1>
 <br><br>
 
 
-<a href="/user"><button class="form-signin btn btn-lg btn-primary btn-block" type="submit" >Пользователь</button></a>
+<a href="/user">
+    <button class="form-signin btn btn-lg btn-primary btn-block" type="submit">Пользователь</button>
+</a>
 
 <br>
 
-<a href="/admin"><button class="form-signin btn btn-lg btn-primary btn-block" type="submit" >Админ</button></a>
+<a href="/admin">
+    <button class="form-signin btn btn-lg btn-primary btn-block" type="submit">Админ</button>
+</a>
 
 <br>
-
-<a href="/signup"><button class="form-signin btn btn-lg btn-primary btn-block" type="submit" >Регистрация</button></a>
-
-
 
 
 </body>

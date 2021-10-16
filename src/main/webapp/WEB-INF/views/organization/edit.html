@@ -3,29 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Update organization</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
 </head>
 <body>
 
-<form th:method="PATCH" th:action="@{/organization/{id}(id=${organization.getId()})}" th:object="${organization}">
-    <label for="nameOfOrganization">Enter name_of_organization: </label>
+<h3 style="margin-left:30px">Create new organization</h3>
+<br/>
+<form th:method="PATCH" th:action="@{/organization/{id}(id=${organization.getId()})}" th:object="${organization}"
+      style="margin-left:30px">
+    <label for="nameOfOrganization">Edit name of organization: </label>
     <input type="text" th:field="*{nameOfOrganization}" id="nameOfOrganization"/>
-    <div style="color:red" th:if="${#fields.hasErrors('nameOfOrganization')}" th:errors="*{nameOfOrganization}">Name Error</div>
+    <div style="color:red" th:if="${#fields.hasErrors('nameOfOrganization')}" th:errors="*{nameOfOrganization}">Name
+        Error
+    </div>
     <br/>
-    <label for="physicalAddress">Enter physical_address: </label>
+    <label for="physicalAddress">Edit physical address: </label>
     <input type="text" th:field="*{physicalAddress}" id="physicalAddress"/>
-    <div style="color:red" th:if="${#fields.hasErrors('physicalAddress')}" th:errors="*{physicalAddress}">Age Error</div>
+    <div style="color:red" th:if="${#fields.hasErrors('physicalAddress')}" th:errors="*{physicalAddress}">Age Error
+    </div>
     <br/>
-    <label for="legalAddress">Enter legal_address: </label>
+    <label for="legalAddress">Edit legal address: </label>
     <input type="text" th:field="*{legalAddress}" id="legalAddress"/>
     <div style="color:red" th:if="${#fields.hasErrors('legalAddress')}" th:errors="*{legalAddress}">Email Error</div>
     <br/>
-    <label for="nameOfDirector">Enter name_of_director: </label>
+    <label for="nameOfDirector">Edit name of director: </label>
     <input type="text" th:field="*{nameOfDirector}" id="nameOfDirector"/>
-    <div style="color:red" th:if="${#fields.hasErrors('nameOfDirector')}" th:errors="*{nameOfDirector}">Email Error</div>
+    <div style="color:red" th:if="${#fields.hasErrors('nameOfDirector')}" th:errors="*{nameOfDirector}">Email Error
+    </div>
     <br/>
-    <input type="submit" value="Update!"/>
+    <input type="submit" class="btn btn-primary" value="Update!"/>
 </form>
 
 </body>

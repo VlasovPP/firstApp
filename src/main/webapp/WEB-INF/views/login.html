@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 
 <head>
     <title>Please Login</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
 
 </head>
 <body>
-<div>
+<div style="margin-left:50px">
     <form name="f" th:action="@{/login}" method="post">
         <fieldset>
             <legend>Please Login</legend>
+            <br/>
             <div th:if="${param.error}" class="alert alert-error">
                 Invalid username and password.
             </div>
@@ -22,11 +24,16 @@
             <input type="text" id="username" name="username"/>
             <label for="password">Password</label>
             <input type="password" id="password" name="password"/>
+            <br/>
             <p class="form-actions">
-                <button type="submit" class="btn">Log in</button>
+                <br/>
+                <button type="submit" class="btn btn-primary">Log in</button>
             </p>
         </fieldset>
     </form>
 </div>
+<br/>
+<a href="/" class="btn btn-primary" style="margin-left:30px">Back to home</a>
+<br/>
 </body>
 </html>

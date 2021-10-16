@@ -6,12 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ru.task.spring.dao.DivisionDAO;
-import ru.task.spring.dao.OrganizationDAO;
 import ru.task.spring.models.Division;
 import ru.task.spring.models.Organization;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
 import java.util.List;
 
 import static ru.task.spring.controllers.OrganizationController.allOrganization;
@@ -24,7 +22,7 @@ public class DivisionController {
 
     @Autowired
     public DivisionController(DivisionDAO divisionDAO) {
-        this.divisionDAO = divisionDAO;
+        DivisionController.divisionDAO = divisionDAO;
     }
 
     @GetMapping()

@@ -8,11 +8,12 @@ import org.springframework.web.bind.annotation.*;
 import ru.task.spring.dao.AssigmentDAO;
 import ru.task.spring.models.Assigment;
 import ru.task.spring.models.Employee;
+
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
-import static ru.task.spring.controllers.EmployeeController.allEmployee;
 
+import static ru.task.spring.controllers.EmployeeController.allEmployee;
 
 
 @Controller
@@ -76,10 +77,10 @@ public class AssigmentController {
     }
 
     @ModelAttribute("singOfControl")
-        public static List<String> singOfCont() {
-            List<String> singOfCont = new ArrayList<>();
-            singOfCont.add("there was no control yet");
-            singOfCont.add("control");
+    public static List<String> singOfCont() {
+        List<String> singOfCont = new ArrayList<>();
+        singOfCont.add("there was no control yet");
+        singOfCont.add("control");
 
         return singOfCont;
     }

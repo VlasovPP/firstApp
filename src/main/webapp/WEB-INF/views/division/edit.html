@@ -3,24 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Update division</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
 </head>
 <body>
 
-<form th:method="PATCH" th:action="@{/division/{id}(id=${division.getId()})}" th:object="${division}">
+<form th:method="PATCH" th:action="@{/division/{id}(id=${division.getId()})}" th:object="${division}"
+      style="margin-left:30px">
     <label for="divisionName">Enter divisionName: </label>
-    <input type="text" th:field="*{divisionName}" id="divisionName"/>
+    <br/>
+    <input type="text" th:field="*{divisionName}" id="divisionName" style="width: 300px"/>
     <div style="color:red" th:if="${#fields.hasErrors('divisionName')}" th:errors="*{divisionName}">divisionName Error</div>
     <br/>
     <label for="contactDetails">Enter contactDetails: </label>
-    <input type="text" th:field="*{contactDetails}" id="contactDetails"/>
-    <div style="color:red" th:if="${#fields.hasErrors('contactDetails')}" th:errors="*{contactDetails}">contactDetails Error</div>
+    <br/>
+    <input type="text" th:field="*{contactDetails}" id="contactDetails" style="width: 300px"/>
+    <div style="color:red" th:if="${#fields.hasErrors('contactDetails')}" th:errors="*{contactDetails}">contactDetails
+        Error
+    </div>
     <br/>
     <label for="managerOfDivision">Enter managerOfDivision: </label>
-    <input type="text" th:field="*{managerOfDivision}" id="managerOfDivision"/>
-    <div style="color:red" th:if="${#fields.hasErrors('managerOfDivision')}" th:errors="*{managerOfDivision}">managerOfDivision Error</div>
+    <br/>
+    <input type="text" th:field="*{managerOfDivision}" id="managerOfDivision" style="width: 300px"/>
+    <div style="color:red" th:if="${#fields.hasErrors('managerOfDivision')}" th:errors="*{managerOfDivision}">
+        managerOfDivision Error
+    </div>
     <br/>
     <label for="organizationId">Choose name of organization: </label>
-    <select class="form-control" th:field="*{organizationId}" id="organizationId">
+    <select class="form-control" th:field="*{organizationId}" id="organizationId" style="width: 300px">
         <option value="0">ALL</option>
         <option th:each="organization : ${allOrganization}"
                 th:value="${organization.getId()}"
@@ -29,7 +40,7 @@
         </option>
     </select>
     <br/>
-    <input type="submit" value="Update!"/>
+    <input type="submit" class="btn btn-primary" value="Update!"/>
 </form>
 
 </body>
