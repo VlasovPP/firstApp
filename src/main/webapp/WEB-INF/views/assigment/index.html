@@ -23,13 +23,12 @@
         <th>text of assigment</th>
         <th>action</th>
         <th>action</th>
-
     </tr>
     </thead>
 
     <tr th:each="assigment : ${assigment}">
         <td th:text="${assigment.getSubjectOfAssigment()}">th</td>
-        <td th:text="${assigment.getExecutorsOfAssigment()}">1234</td>
+        <td th:text="${assigment.surnameEmplFromId(assigment.getExecutorsOfAssigment()) + ' ' + assigment.nameEmplFromId(assigment.getExecutorsOfAssigment()) + ' ' + assigment.middleNameEmplFromId(assigment.getExecutorsOfAssigment()) }">1234</td>
         <td th:text="${assigment.getDateOfExecution()}">1234</td>
         <td th:text="${assigment.getSingOfControl()}">1234</td>
         <td th:text="${assigment.getSingOfExecution().toString()}">1234</td>

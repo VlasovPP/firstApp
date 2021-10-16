@@ -1,8 +1,12 @@
 package ru.task.spring.models;
 
+import ru.task.spring.controllers.DivisionController;
+import ru.task.spring.controllers.EmployeeController;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.util.Objects;
 
 @Table(name = "assigment")
 @Entity
@@ -17,8 +21,7 @@ public class Assigment {
     @Column(name = "subject_of_assigment")
     private String subjectOfAssigment;
 
-    @NotEmpty(message = "executor of assigment id should not be empty")
-    @Size(min = 1, max = 30, message = "subject of assigment should be between 1 and 30 characters")
+
     @Column(name = "executor_of_assigment_id")
     private int executorsOfAssigment;
 
@@ -101,4 +104,23 @@ public class Assigment {
     public void setId(int id) {
         this.id = id;
     }
+
+    public String surnameEmplFromId(int myid) {
+        return Objects.requireNonNull(EmployeeController.allEmployee().stream().filter(organization -> organization.getId() == (myid))
+                .findFirst()
+                .orElse(null)).getSurname();
+    }
+
+    public String nameEmplFromId(int myid) {
+        return Objects.requireNonNull(EmployeeController.allEmployee().stream().filter(organization -> organization.getId() == (myid))
+                .findFirst()
+                .orElse(null)).getName();
+    }
+
+    public String middleNameEmplFromId(int myid) {
+        return Objects.requireNonNull(EmployeeController.allEmployee().stream().filter(organization -> organization.getId() == (myid))
+                .findFirst()
+                .orElse(null)).getMiddleName();
+    }
+
 }
