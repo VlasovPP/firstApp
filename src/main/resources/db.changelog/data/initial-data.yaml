@@ -1,0 +1,149 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1634445378507-2
+      author: HONOR (generated)
+      changes:
+        - loadData:
+            columns:
+              - column:
+                  header: id
+                  name: id
+                  type: NUMERIC
+              - column:
+                  header: name_of_organization
+                  name: name_of_organization
+                  type: STRING
+              - column:
+                  header: physical_address
+                  name: physical_address
+                  type: STRING
+              - column:
+                  header: legal_address
+                  name: legal_address
+                  type: STRING
+              - column:
+                  header: name_of_director
+                  name: name_of_director
+                  type: STRING
+            commentLineStartsWith: '#'
+            encoding: UTF-8
+            file: C:Program FilesPostgreSQL14data/organization.csv
+            quotchar: '"'
+            separator: ','
+            relativeToChangelogFile: true
+            tableName: organization
+  - changeSet:
+      id: 1634445378507-4
+      author: HONOR (generated)
+      changes:
+        - loadData:
+            columns:
+              - column:
+                  header: id
+                  name: id
+                  type: NUMERIC
+              - column:
+                  header: division_name
+                  name: division_name
+                  type: STRING
+              - column:
+                  header: contact_details
+                  name: contact_details
+                  type: STRING
+              - column:
+                  header: manager_of_division
+                  name: manager_of_division
+                  type: STRING
+              - column:
+                  header: organization_id
+                  name: organization_id
+                  type: NUMERIC
+            commentLineStartsWith: '#'
+            encoding: UTF-8
+            file: C:Program FilesPostgreSQL14data/division.csv
+            quotchar: '"'
+            separator: ','
+            relativeToChangelogFile: true
+            tableName: division
+  - changeSet:
+      id: 1634445378507-6
+      author: HONOR (generated)
+      changes:
+        - loadData:
+            columns:
+              - column:
+                  header: id
+                  name: id
+                  type: NUMERIC
+              - column:
+                  header: surname
+                  name: surname
+                  type: STRING
+              - column:
+                  header: name
+                  name: name
+                  type: STRING
+              - column:
+                  header: middle_name
+                  name: middle_name
+                  type: STRING
+              - column:
+                  header: position
+                  name: position
+                  type: STRING
+              - column:
+                  header: division_id
+                  name: division_id
+                  type: NUMERIC
+              - column:
+                  header: organization_id
+                  name: organization_id
+                  type: NUMERIC
+            commentLineStartsWith: '#'
+            encoding: UTF-8
+            file: C:Program FilesPostgreSQL14data/employee.csv
+            quotchar: '"'
+            separator: ','
+            relativeToChangelogFile: true
+            tableName: employee
+  - changeSet:
+      id: 1634445378507-8
+      author: HONOR (generated)
+      changes:
+        - loadData:
+            columns:
+              - column:
+                  header: assigment_id
+                  name: assigment_id
+                  type: NUMERIC
+              - column:
+                  header: subject_of_assigment
+                  name: subject_of_assigment
+                  type: STRING
+              - column:
+                  header: executor_of_assigment_id
+                  name: executor_of_assigment_id
+                  type: NUMERIC
+              - column:
+                  header: date_of_execution
+                  name: date_of_execution
+                  type: STRING
+              - column:
+                  header: sing_of_control
+                  name: sing_of_control
+                  type: STRING
+              - column:
+                  header: sing_of_execution
+                  name: sing_of_execution
+                  type: STRING
+              - column:
+                  header: text_of_assigment
+                  name: text_of_assigment
+                  type: STRING
+            commentLineStartsWith: '#'
+            encoding: UTF-8
+            file: C:Program FilesPostgreSQL14data/assigment.csv
+            quotchar: '"'
+            separator: ','
+            relativeToChangelogFile: true
+            tableName: assigment

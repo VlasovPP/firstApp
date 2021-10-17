@@ -1,0 +1,181 @@
+databaseChangeLog:
+- changeSet:
+      id: 1634445378507-1
+      author: HONOR (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: organization_pk
+                  name: id
+                  type: INTEGER
+              - column:
+                  name: name_of_organization
+                  type: VARCHAR
+              - column:
+                  name: physical_address
+                  type: VARCHAR
+              - column:
+                  name: legal_address
+                  type: VARCHAR
+              - column:
+                  name: name_of_director
+                  type: VARCHAR
+            tableName: organization
+- changeSet:
+      id: 1634445378507-3
+      author: HONOR (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: division_pk
+                  name: id
+                  type: INTEGER
+              - column:
+                  name: division_name
+                  type: VARCHAR
+              - column:
+                  name: contact_details
+                  type: VARCHAR
+              - column:
+                  name: manager_of_division
+                  type: VARCHAR
+              - column:
+                  name: organization_id
+                  type: INTEGER
+            tableName: division
+- changeSet:
+      id: 1634445378507-5
+      author: HONOR (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: employee_pk
+                  name: id
+                  type: INTEGER
+              - column:
+                  name: surname
+                  type: VARCHAR
+              - column:
+                  name: name
+                  type: VARCHAR
+              - column:
+                  name: middle_name
+                  type: VARCHAR
+              - column:
+                  name: position
+                  type: VARCHAR
+              - column:
+                  name: division_id
+                  type: INTEGER
+              - column:
+                  name: organization_id
+                  type: INTEGER
+            tableName: employee
+- changeSet:
+      id: 1634445378507-7
+      author: HONOR (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: assigment_pk
+                  name: assigment_id
+                  type: INTEGER
+              - column:
+                  name: subject_of_assigment
+                  type: VARCHAR
+              - column:
+                  name: executor_of_assigment_id
+                  type: INTEGER
+              - column:
+                  name: date_of_execution
+                  type: VARCHAR
+              - column:
+                  name: sing_of_control
+                  type: VARCHAR
+              - column:
+                  name: sing_of_execution
+                  type: VARCHAR
+              - column:
+                  name: text_of_assigment
+                  type: VARCHAR
+            tableName: assigment
+- changeSet:
+      id: 1634445378507-9
+      author: HONOR (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: organization_id
+            baseTableName: division
+            constraintName: division_organization_id_fk
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: CASCADE
+            onUpdate: CASCADE
+            referencedColumnNames: id
+            referencedTableName: organization
+            validate: true
+- changeSet:
+      id: 1634445378507-10
+      author: HONOR (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: organization_id
+            baseTableName: employee
+            constraintName: employee_organization_id_fk
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: NO ACTION
+            onUpdate: NO ACTION
+            referencedColumnNames: id
+            referencedTableName: organization
+            validate: true
+- changeSet:
+      id: 1634445378507-11
+      author: HONOR (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: division_id
+            baseTableName: employee
+            constraintName: employee_division_id_fk
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: NO ACTION
+            onUpdate: NO ACTION
+            referencedColumnNames: id
+            referencedTableName: division
+            validate: true
+- changeSet:
+      id: 1634445378507-12
+      author: HONOR (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: executor_of_assigment_id
+            baseTableName: assigment
+            constraintName: assigment_employee_id_fk
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: CASCADE
+            onUpdate: CASCADE
+            referencedColumnNames: id
+            referencedTableName: employee
+            validate: true
