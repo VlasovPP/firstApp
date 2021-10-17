@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/division/index.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/division" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/organization/index.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/organization" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assigment/index.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assigment" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assigment/new.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/assigment" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/division/edit.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/division" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/division/index.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/division" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/division/new.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/division" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/division/show.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/division" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/organization/index.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/organization" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/organization/new.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/organization" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/security/login.html" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/security" />
+      </map>
+    </option>
+  </component>
+</project>

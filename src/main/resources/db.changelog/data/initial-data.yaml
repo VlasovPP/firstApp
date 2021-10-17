@@ -27,7 +27,7 @@ databaseChangeLog:
                   type: STRING
             commentLineStartsWith: '#'
             encoding: UTF-8
-            file: C:Program FilesPostgreSQL14data/organization.csv
+            file: data/organization.csv
             quotchar: '"'
             separator: ','
             relativeToChangelogFile: true
@@ -60,7 +60,7 @@ databaseChangeLog:
                   type: NUMERIC
             commentLineStartsWith: '#'
             encoding: UTF-8
-            file: C:Program FilesPostgreSQL14data/division.csv
+            file: data/division.csv
             quotchar: '"'
             separator: ','
             relativeToChangelogFile: true
@@ -101,7 +101,7 @@ databaseChangeLog:
                   type: NUMERIC
             commentLineStartsWith: '#'
             encoding: UTF-8
-            file: C:Program FilesPostgreSQL14data/employee.csv
+            file: data/employee.csv
             quotchar: '"'
             separator: ','
             relativeToChangelogFile: true
@@ -142,7 +142,7 @@ databaseChangeLog:
                   type: STRING
             commentLineStartsWith: '#'
             encoding: UTF-8
-            file: C:Program FilesPostgreSQL14data/assigment.csv
+            file: data/assigment.csv
             quotchar: '"'
             separator: ','
             relativeToChangelogFile: true

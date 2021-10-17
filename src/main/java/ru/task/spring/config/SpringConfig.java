@@ -1,5 +1,6 @@
 package ru.task.spring.config;
 
+import liquibase.integration.spring.SpringLiquibase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -112,6 +113,14 @@ public class SpringConfig implements WebMvcConfigurer {
         transactionManager.setSessionFactory(sessionFactory().getObject());
 
         return transactionManager;
+    }
+
+    @Bean
+    public SpringLiquibase liquibase(){
+        SpringLiquibase liquibase = new SpringLiquibase();
+        liquibase.setChangeLog("classpath:db.changelog/db.changelog-master.yaml");
+        liquibase.setDataSource(dataSource());
+        return liquibase;
     }
 
 }
