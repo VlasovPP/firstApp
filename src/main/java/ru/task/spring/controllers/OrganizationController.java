@@ -1,5 +1,6 @@
 package ru.task.spring.controllers;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,11 +13,13 @@ import ru.task.spring.models.Organization;
 import javax.validation.Valid;
 import java.util.List;
 
+import static org.slf4j.LoggerFactory.getLogger;
+
 
 @Controller
 @RequestMapping("/organization")
 public class OrganizationController {
-
+    private static final Logger log = getLogger(HomeController.class);
     private static OrganizationDAO organizationDAO;
 
     @Autowired
@@ -26,6 +29,7 @@ public class OrganizationController {
 
     @GetMapping()
     public String index(Model model) {
+        log.debug("orgAll");
         model.addAttribute("organization", organizationDAO.index());
         return "organization/index";
     }
@@ -38,6 +42,7 @@ public class OrganizationController {
 
     @GetMapping("/new")
     public String newPerson(@ModelAttribute("organization") Organization organization) {
+        log.debug("orgNew");
         return "organization/new";
     }
 
